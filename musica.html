@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="v iewport" content="width=device-width, initial-scale=1.0">
+    <title>Música</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="reproductor.css">
+  </head>
+  <body>
+    <header>
+      <div id="nav">
+      <a href="index.html">Multimedia | Home</a>
+      <a href="img.html">Imágenes</a>
+      <a href="musica.html">Música</a>
+      </div>
+    </header>
+    <main id="main">
+    <div id="T1"><h1>Música</h1></div>
+   <div id="Content">
+    <input type="file" id="file-input" accept="audio/mp3, audio/mpeg, video/mp4, audio/mp4" multiple style="display: none;">
+    <div id="media-screen" class="media-screen">
+<video id="media-player" playsinline></video>
+<div id="player-display" class="player-display">
+<div id="track-title" class="track-title">Sin archivos cargados</div>
+<div id="track-status" class="track-status">Haz clic en "Cargar" para seleccionar MP3 o MP4</div>
+</div>
+</div>
+<div class="playlist-container">
+<ul id="playlist" class="playlist">
+<li class="playlist-empty">La lista está vacía</li>
+</ul>
+</div>
+</div>
+
+  </div>
+   <div id="Controles">
+  <div class="Bx" id="btn-cargar">📁 Cargar</div>
+  <div class="Bx" id="btn-play">▶️ Play</div>
+  <div class="Bx" id="btn-siguiente">⏭️ Siguiente</div>
+  </div>
+    </main> 
+    <div id="footer">
+    <footer>
+      <p>&copy; Saida Yesenia 2026</p>
+    </footer>
+    </div>
+    <script src="musica.js"></script>
+  </body>
+</html> 

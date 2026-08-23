@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Estilos CSS para Carrusel e Interfaz (estilos.css)
+   ========================================================================== */
+
+/* Reseteo básico y tipografía */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor Principal */
+
+/* Título */
+
+
+/* Estructura del Carrusel */
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background-color: #4a4a4a; /* Fondo gris igual a la captura de pantalla */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Diapositivas (Items) */
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  transform: scale(0.98);
+}
+
+.carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Imágenes */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* En caso de que no haya imagen o mientras carga, muestra fondo gris neutro estilo Bootstrap */
+.carousel-item:not(:has(img[src])):after {
+  content: attr(data-placeholder);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 2.5rem;
+  color: #777;
+}
+
+/* Pie de foto / Leyenda (Caption) igual a la captura */
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 45px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  border-radius: 6px;
+}
+
+.carousel-caption h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.carousel-caption p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Indicadores inferiores (Líneas horizontales) */
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+
+.carousel-indicators li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 30px;
+  height: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  transition: opacity 0.6s ease, background-color 0.3s ease, width 0.3s ease;
+  border-radius: 2px;
+}
+
+.carousel-indicators li.active {
+  background-color: #ffffff;
+  opacity: 1;
+  width: 40px;
+}
+
+/* Botones Flecha Anterior / Siguiente */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12%;
+  color: #fff;
+  text-align: center;
+  opacity: 0.6;
+  transition: opacity 0.25s ease, background-color 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Iconos de Flecha en la captura */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Controles Inferiores B1, B2, B3 */
+
+/* Notificación Flotante (Toast) para interacciones de botones */
+#toast-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #440f0f;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#toast-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}

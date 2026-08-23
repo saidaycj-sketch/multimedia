@@ -1,0 +1,121 @@
+body {
+  font-family: sans-serif;  
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(-45deg, #a32f65,#320bbe,#0b4bc2,#c9511a);
+  background-size: 400% 400%;
+  animation:
+    degradadoEnMovimiento 35s ease infinite;
+}
+@keyframes degradadoEnMovimiento {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#nav{
+  height:60px;
+  background-color: #a32f65;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#nav a{
+  width:30.75%;
+  height:75%;
+  padding:2px;
+  background-color: #c9511a;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-decoration: none;
+  color:#000;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 60px;
+}
+#main {
+  margin-bottom: 0px;
+  margin:10px auto;
+  width: 700px;
+  height:500px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 12px;
+  margin-top: 100px;
+} 
+#T1 {
+  width: auto;
+  height: 50px;
+  background-color: #a32f65;
+  border-radius: 10px 10px 0px 0px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color:#000;
+}
+#T1 h1 {
+  font-weight: bold;
+  font-size: 2em;
+}
+#Content {
+  width: auto;
+  height: 600px;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+#Controles {
+  background-color:#a32f65;
+  border-radius: 0px 0px 12px 12px;
+  height: 60px;
+  width: auto;
+  margin: 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Bx {
+  width:32%;
+  height:70%;
+  padding:2px;
+  background-color:#c9511a;
+  color:#000;
+  font-weight: bold;  
+  font-size: 25px;
+  border-radius: 60px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+#nav a:hover{
+  color:#000000;
+  background-color: #471414ad;
+  text-decoration: underline;
+}
+#footer{
+  margin-top: 231px;
+  height:60px;
+  background-color:#a32f65;
+  display:flex; 
+  justify-content: space-evenly;
+  align-items: center;
+  color: #000;
+  font-weight: bold;
+}
+
+.Bx:hover {
+ color:#000000;
+  background-color: #471414ad;
+  text-decoration: underline;
+}
+
+.Bx:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
